@@ -66,6 +66,8 @@ public class CategoryEntity implements Serializable {
 	 */
 	private Integer productCount;
 
+	/*所有的子分类，不是数据表的属性，所以@TableField(exist=false)
+	* 将当前菜单的子分类都保存到这个属性下*/
 	@JsonInclude(JsonInclude.Include.NON_EMPTY)
 	@TableField(exist=false)
 	private List<CategoryEntity> children;
